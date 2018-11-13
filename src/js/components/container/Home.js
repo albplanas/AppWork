@@ -1,17 +1,17 @@
 import React from "react";
 import { connect } from 'react-redux';
 
-
+import Login from './Login'
+import Profile from './Profile/Profile'
 
 
 function Home(props) {
 
 
       return (
-        <div >
         
-                   
-        </div>
+             props.login === false ?  <Login/> : <Profile/>
+
       );
     }
   
@@ -19,7 +19,7 @@ function Home(props) {
 
   const mapStateToProps = state => {
     return {
-        
+        login:state.globalState.login
     };
   };
   
